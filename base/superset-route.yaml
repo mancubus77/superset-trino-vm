@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: superset
+  namespace: vm
+spec:
+  host: superset-vm.apps.ocp4.rhpg.org
+  to:
+    kind: Service
+    name: superset
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None

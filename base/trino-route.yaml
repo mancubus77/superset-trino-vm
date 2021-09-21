@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: coordinator
+  namespace: vm
+spec:
+  host: coordinator-vm.apps.ocp4.rhpg.org
+  to:
+    kind: Service
+    name: coordinator
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None

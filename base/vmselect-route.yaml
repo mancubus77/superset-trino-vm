@@ -1,0 +1,16 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  annotations:
+    haproxy.router.openshift.io/rewrite-target: /select/0/prometheus
+  name: vmselect-simple
+  namespace: vm
+spec:
+  host: vmselect-simple-vm.apps.ocp4.rhpg.org
+  to:
+    kind: Service
+    name: vmselect-simple
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
