@@ -42,9 +42,9 @@ metadata:
     heritage: "Helm"
 type: Opaque
 stringData:
-    REDIS_HOST: "superset-superset-redis-headless"
+    REDIS_HOST: "superset-redis-headless"
     REDIS_PORT: "6379"
-    DB_HOST: "superset-superset-postgresql"
+    DB_HOST: "superset-postgresql"
     DB_PORT: "5432"
     DB_USER: "superset"
     DB_PASS: "superset"
@@ -929,7 +929,7 @@ spec:
               sleep 1; done
           envFrom:
             - secretRef:
-                name: superset-env
+                name: superset-superset-env
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File

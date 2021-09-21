@@ -7,7 +7,7 @@ spec:
   host: superset-vm.apps.ocp4.rhpg.org
   to:
     kind: Service
-    name: superset
+    name: superset-superset
     weight: 100
   port:
     targetPort: http
